@@ -28,7 +28,7 @@ Todo:
 - saving source code edited in ACE locally, perhaps 'SaveAs' (.JSCAD, .STL, .AMF)
 - DONE: include(); support of multiple files, see http://jsfiddle.net/yybRu/
 -->
-<title>OpenJSCAD.org</title>
+<title>My Marker Holder!</title>
 <link rel="shortcut icon" href="imgs/favicon.png" type="image/x-png">
 <link rel="stylesheet" href="jquery/themes/base/jquery-ui.css" />
 <script src="jquery/jquery-1.9.1.js"></script>
@@ -119,8 +119,7 @@ $(document).ready(function() {
    });
 });   
 </script>
-<img id="header" src="imgs/title.png">
-
+<div style="display:none;">
 <div id=menu>
 <img id=menuHandle src="imgs/menuHandleVL.png">
 <nav>
@@ -157,6 +156,7 @@ $(document).ready(function() {
 <p><a class=navlink href="#" onclick="$('#about').show(); return false;">About</a></p>
 </nav>
 </div> <!-- /menu -->
+</div>
 
 <div id=about>
 <img src="imgs/title.png"><br>
@@ -178,6 +178,7 @@ Get your copy/clone/fork from <a href="https://github.com/Spiritdude/OpenJSCAD.o
 <a class=okButton href='#' onclick="$('#about').hide(); return false;"> OK </a>
 </div>
 
+<div style="display:none;">
 <div id="editor">var n_markers = 6;
 
 var height = 50;
@@ -253,7 +254,7 @@ function markers(){
 ;
 }
 </div>
-
+</div>
 <script>
 var ex = [ 
 { file:'dry_eraser.jscad', title: 'OpenJSCAD.org Logo' },
@@ -436,6 +437,7 @@ if(me=='web-online') {
 <div oncontextmenu="return false;" id="viewer"></div> <!-- avoiding popup when right mouse is clicked -->
 
 <div id="parametersdiv"></div>
+<div style="display:none;">
 <div id="tail">
 <div id="statusdiv"></div>
 <div id="errordiv"></div>
@@ -457,7 +459,8 @@ if(me=='web-online') {
   </div>
 </div>
 </div>
-<div id=footer>
+</div>
+<div id=footer style="display:none;">
 OpenJSCAD.org 
 <script>document.write(version);</script>, MIT License &amp; GPLv2, get your own copy/clone/fork from <a target=_blank href="https://github.com/Spiritdude/OpenJSCAD.org">GitHub: OpenJSCAD</a>
 </div>

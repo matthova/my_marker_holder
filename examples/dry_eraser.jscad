@@ -16,9 +16,8 @@ var nudge = 0.1;
 var precision = 24;
 var autodesk_blue = [0.03125,0.5859375,0.78125];
 var autodesk_green = [0.4375,0.6640625,0.3125];
-
 function main(){
-    return difference(
+    return rotate([0,0,-90], difference(
         union(
             //eraser block
             cube({size:[eraser_width + thickness * 2, eraser_depth + thickness * 2, height + thickness]})
@@ -39,7 +38,7 @@ function main(){
             //marker holes
             , markers()
         ).setColor(autodesk_green)
-    );
+    ).translate([-n_markers*(thickness + marker_rad * 2) + eraser_width,0,0]));
 }
 
 function fastener(){

@@ -1024,6 +1024,8 @@ OpenJsCad.Processor.prototype = {
     };
     this.statusbuttons.appendChild(this.formatDropdown);
     this.generateOutputFileButton = document.createElement("button");
+		this.generateOutputFileButton.setAttribute("id", "download");
+		
     this.generateOutputFileButton.onclick = function(e) {
       that.generateOutputFile();
     };
@@ -1039,7 +1041,7 @@ OpenJsCad.Processor.prototype = {
 
     var headerdiv = document.createElement("div");
     //headerdiv.innerText = "Parameters:";
-    headerdiv.innerHTML = "Parameters:";
+    // headerdiv.innerHTML = "Parameters:";
     headerdiv.className = "parameterheader";
     this.parametersdiv.appendChild(headerdiv);
 
@@ -1053,17 +1055,17 @@ OpenJsCad.Processor.prototype = {
       that.rebuildSolid();
     };
     this.parametersdiv.appendChild(parseParametersButton);
-
+		parseParametersButton.setAttribute("id", "updateButton");
     // implementing instantUpdate
-    var instantUpdateCheckbox = document.createElement("input");
-    instantUpdateCheckbox.type = "checkbox";
-    instantUpdateCheckbox.id = "instantUpdate";
-    this.parametersdiv.appendChild(instantUpdateCheckbox);
+    // var instantUpdateCheckbox = document.createElement("input");
+    // instantUpdateCheckbox.type = "checkbox";
+    // instantUpdateCheckbox.id = "instantUpdate";
+    // this.parametersdiv.appendChild(instantUpdateCheckbox);
 
-    var instantUpdateCheckboxText = document.createElement("span");
-    instantUpdateCheckboxText.innerHTML = "Instant Update";
-    instantUpdateCheckboxText.id = "instantUpdateLabel";
-    this.parametersdiv.appendChild(instantUpdateCheckboxText);
+    // var instantUpdateCheckboxText = document.createElement("span");
+    // instantUpdateCheckboxText.innerHTML = "Instant Update";
+    // instantUpdateCheckboxText.id = "instantUpdateLabel";
+    // this.parametersdiv.appendChild(instantUpdateCheckboxText);
 
     this.enableItems();    
 
@@ -1270,6 +1272,7 @@ OpenJsCad.Processor.prototype = {
           {
             that.setCurrentObject(obj);
             that.statusspan.innerHTML = "Ready.";
+						$('#download').trigger('click');
           }
           that.enableItems();
           if(that.onchange) that.onchange();
@@ -1584,11 +1587,11 @@ OpenJsCad.Processor.prototype = {
         }        
       }
       // implementing instantUpdate
-      control.onchange = function() { 
-         if(document.getElementById("instantUpdate").checked==true) {
-            that.rebuildSolid();
-         }
-      };
+      // control.onchange = function() {
+      //    if(document.getElementById("instantUpdate").checked==true) {
+      //       that.rebuildSolid();
+      //    }
+      // };
       paramControls.push(control);
       var tr = document.createElement("tr");
       var td = document.createElement("td");

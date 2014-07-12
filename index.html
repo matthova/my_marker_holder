@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html ng-app="app"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 <!-- 
 == OpenJSCAD.org, written by Rene K. Mueller <spiritdude@gmail.com>, Licensed under MIT License ==
@@ -177,8 +177,10 @@ Get your copy/clone/fork from <a href="https://github.com/Spiritdude/OpenJSCAD.o
 <p><br>
 <a class=okButton href='#' onclick="$('#about').hide(); return false;"> OK </a>
 </div>
-<div id="editor">
+<div style="display:none">
+	<div id="editor">
 </div>
+</div	>
 <script>
 var ex = [ 
 { file:'dry_eraser.jscad', title: 'OpenJSCAD.org Logo' },
@@ -358,13 +360,10 @@ if(me=='web-online') {
 }
 </script>
 
-<div style:"width:100%">
-	<div oncontextmenu="return false;" id="viewer"></div> <!-- avoiding popup when right mouse is clicked -->
-</div>
+<div oncontextmenu="return false;" id="viewer"></div> <!-- avoiding popup when right mouse is clicked -->
 
 <div id="parametersdiv"></div>
-<div style="display:none;">
-<div id="tail">
+<div id="tail" >
 <div id="statusdiv"></div>
 <div id="errordiv"></div>
 <div id="filedropzone">
@@ -383,7 +382,6 @@ if(me=='web-online') {
 	   <label for="autoreload">Auto Reload</label><input type="checkbox" name="autoreload" value="" id="autoreload" onclick="toggleAutoReload();">
     </div>
   </div>
-</div>
 </div>
 </div>
 <div id=footer style="display:none;">
@@ -986,5 +984,10 @@ function deleteCookie(name) {
     createCookie(name, "", -1);
 }
 
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+<script>
+'use strict';
+angular.module('app', [])
 </script>
 </body></html> 

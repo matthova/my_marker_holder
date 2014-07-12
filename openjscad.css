@@ -1,6 +1,16 @@
 /* openjscad.css, originally written by Joost Nieuwenhuijse
  *    few changes made by Rene K. Mueller for OpenSCAD.org
  */
+#updateButton {
+	width:100%;
+	font-size: 100%;
+	font-family:arial;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+	background:#eee;
+	cursor:pointer;
+}
 
 #filedropzone {
   border: 2px dashed #bbb;
@@ -59,20 +69,19 @@ canvas {
 #parametersdiv {
   /* display: inline-block;     ineffective since we do control in openjscad.js */
   position: absolute;         
-
-  bottom: 9em;                /* draggable via jQuery cannot move bottom: align, stick at the bottom (bug!!) */
+	font-family:arial;
+  top: 1em;                /* draggable via jQuery cannot move bottom: align, stick at the bottom (bug!!) */
   left: 1em;
   /* top: 2em;                if draggable, but must be left/top oriented, cannot be aligned bottom which looks nicer
      left: 16em;
    */
-  
+
   z-index: 4;
   border: 1px solid rgb(200,200,200);
- 
   border-radius: 5px;     
   -moz-border-radius: 5px;    /* css mess */
   -webkit-border-radius: 5px;
-
+	font-size:200%;
   padding: 10px;
   background: #fff; /* rgba(255,255,255,0.7); */
   opacity: 0.8;
@@ -86,8 +95,14 @@ canvas {
 }
 #parametersdiv input, #parametersdiv textarea, #parametersdiv select {
   font-size: 0.9em;
-  background: #fea;
+  background: #eee;
   border: none;
+	width:2em;
+	text-align:center;
+  border-radius: 5px;     
+  -moz-border-radius: 5px;    /* css mess */
+  -webkit-border-radius: 5px;
+	border:2px solid #000;
 }
 
 #parametersdiv .parameterheader {

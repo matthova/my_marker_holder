@@ -364,14 +364,27 @@ if(me=='web-online') {
 <div style="display:none;">
 	<div id="parametersdiv"></div>
 </div>
+
+
 <div class="editAndDownload">
-	<form ng-app="myapp" name="myform" novalidate> 
-	    <div ng-controller="Ctrl">
-	        <zero-to-nine input-value="wks.number" input-name="wks.name"/>
-	    </div>
-	</form>
-	<a id="download_link">Download STL</a>
+	<div>
+		<a href="http://www.matthova.com">
+			<img class="logo" src="imgs/hova_logo.svg">
+			<h1 class="name">MATT HOVA</h1>
+		</a>
+	</div>
+	<div>
+		<form ng-app="myapp" name="myform" novalidate> 
+			<div ng-controller="Ctrl">
+				<h1> <zero-to-nine input-value="wks.number" input-name="wks.name"/></h1>
+		  </div>
+		</form>
+
+		<a class="clickdownload" id="download_link">Download STL</a>
+	</div>
 </div>
+
+
 <div style="display:none;">
 	<div id="tail">
 <div id="statusdiv"></div>

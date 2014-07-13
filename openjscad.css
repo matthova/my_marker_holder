@@ -2,10 +2,79 @@
  *    few changes made by Rene K. Mueller for OpenSCAD.org
  */
 
+
 .editAndDownload{
-	position:absolute;
-	top:1em;
-	left:1em;
+	position: absolute;
+	top: 0em;
+	height: 65px;
+	width: 100%;
+	background: rgba(255,255,255,.6);
+}
+
+a:link {
+    color: #000;
+}
+
+/* visited link */
+a:visited {
+    color: #000;
+}
+input {
+	padding: 15px;
+	outline: none;
+	position: relative;
+	top: 0px;
+	font-size: 25px;
+	height: 27px;
+	border: 5px solid lightgray;
+	right: -29px;
+	width: 75px;
+	text-align: center;
+	
+}
+
+.logo{
+	height: 55px;
+	padding-left: 35px;
+	position: relative;
+	top: 5px;
+}
+
+.ng-scope{
+	float: right;
+	position: relative;
+	right: 200px;
+	top: -69px;
+}
+
+.name{
+	position: relative;
+	top: -64px;
+	left: 100px;
+	letter-spacing: 10px;
+}
+
+.ng-isolate-scope{
+	position: fixed;
+	top: 0px;
+	left: 1000px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+.clickdownload{
+	position: relative;
+	top: -113px;
+	left: 1340px;
+	text-transform: uppercase;
+	background: rgb(80,210,210);
+	color: white !important;
+	padding: 24px;
+	letter-spacing: 3px;
+}
+
+.clickdownload:hover{
+	background: rgb(90,220,220);
 }
 
 #filedropzone {
@@ -19,6 +88,13 @@
   width: 100%;
   background: #fff;
   margin-top: 0.5em;
+}
+
+.editAndDownload #navlist li
+{
+display: inline;
+list-style-type: none;
+padding-right: 20px;
 }
 
 #filedropzone_empty {

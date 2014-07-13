@@ -373,7 +373,7 @@ OpenJsCad.Viewer.prototype = {
       gl.enable(gl.BLEND);
       gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
       gl.begin(gl.LINES);
-      var plate = 200;
+      var plate = 2000;
       if(this.plate) {
          gl.color(.8,.8,.8,.5); // -- minor grid
          for(var x=-plate/2; x<=plate/2; x++) {

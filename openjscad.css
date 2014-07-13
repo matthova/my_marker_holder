@@ -2,10 +2,21 @@
  *    few changes made by Rene K. Mueller for OpenSCAD.org
  */
 
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
 
+.cf:after {
+    clear: both;
+}
+
+.nomargin{
+	margin:0;
+	height:65px;
+}
 .editAndDownload{
-	position: absolute;
-	top: 0em;
 	height: 65px;
 	width: 100%;
 	background: rgba(255,255,255,.6);
@@ -19,53 +30,48 @@ a:link {
 a:visited {
     color: #000;
 }
+
 input {
-	padding: 15px;
+	padding: 13px;
 	outline: none;
-	position: relative;
+/*	position: relative;
 	top: 0px;
-	font-size: 25px;
-	height: 27px;
-	border: 5px solid lightgray;
-	right: -29px;
-	width: 75px;
+*/	font-size: 25px;
+/*	height: 27px;
+*/	border: 5px solid lightgray;
+/*	right: -29px;
+*/	width: 75px;
 	text-align: center;
-	
+	margin:0;
+
 }
 
 .logo{
 	height: 55px;
-	padding-left: 35px;
 	position: relative;
-	top: 5px;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .ng-scope{
-	float: right;
-	position: relative;
-	right: 200px;
-	top: -69px;
+	display: inline-block;
+	vertical-align: top;
 }
 
 .name{
 	position: relative;
-	top: -64px;
-	left: 100px;
 	letter-spacing: 10px;
-}
+	display: inline-block;
+	line-height: 55px;
+	vertical-align: middle;
+	margin: 0;}
 
 .ng-isolate-scope{
-	position: fixed;
-	top: 0px;
-	left: 1000px;
-	text-transform: uppercase;
-	letter-spacing: 3px;
 }
 
 .clickdownload{
-	position: relative;
-	top: -113px;
-	left: 1340px;
+	display:inline-block;
+	vertical-align:middle;
 	text-transform: uppercase;
 	background: rgb(80,210,210);
 	color: white !important;

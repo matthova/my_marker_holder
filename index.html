@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app"><head>
+<html><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 <!-- 
 == OpenJSCAD.org, written by Rene K. Mueller <spiritdude@gmail.com>, Licensed under MIT License ==
@@ -361,7 +361,16 @@ if(me=='web-online') {
 </script>
 <div oncontextmenu="return false;" id="viewer"></div> <!-- avoiding popup when right mouse is clicked -->
 
-<div id="parametersdiv">
+<div style="display:none;">
+	<div id="parametersdiv"></div>
+</div>
+<div class="editAndDownload">
+	<form ng-app="myapp" name="myform" novalidate> 
+	    <div ng-controller="Ctrl">
+	        <zero-to-nine input-value="wks.number" input-name="wks.name"/>
+	    </div>
+	</form>
+	<a id="download_link">Download STL</a>
 </div>
 <div style="display:none;">
 	<div id="tail">
@@ -989,7 +998,37 @@ function deleteCookie(name) {
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
 <script>
-'use strict';
-angular.module('app', [])
+var $scope;
+var app = angular.module('myapp', []);
+
+app.controller('Ctrl', function($scope) {
+    $scope.wks =  {number: 4, name: 'testing'};
+});
+
+app.directive('zeroToNine', function () {
+	return {
+        restrict: 'EA',
+        template: 'Markers:<input id="markerCount" name="{{inputName}}" ng-model="inputValue" />',
+        scope: {
+            inputValue: '=',
+            inputName: '='
+        },
+		link: function (scope) {
+            scope.$watch('inputValue', function(newValue,oldValue) {
+                
+                var arr = String(newValue).split("");
+                if (arr.length === 0) return;
+
+                if (isNaN(newValue)) {
+                    scope.inputValue = oldValue;
+                }
+                if (arr.length > 1){
+                    scope.inputValue = oldValue;
+                }
+								$('#updateButton').trigger('click');
+            });
+		}
+	};
+});
 </script>
 </body></html> 

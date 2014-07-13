@@ -1,19 +1,11 @@
 /* openjscad.css, originally written by Joost Nieuwenhuijse
  *    few changes made by Rene K. Mueller for OpenSCAD.org
  */
-#updateButton {
-	width:100%;
-	font-size: 100%;
-	font-family:arial;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-	background:#eee;
-	cursor:pointer;
-}
 
-#download_link{
-	text-align:center;
+.editAndDownload{
+	position:absolute;
+	top:1em;
+	left:1em;
 }
 
 #filedropzone {

@@ -1059,10 +1059,10 @@ OpenJsCad.Processor.prototype = {
 		parseParametersButton.setAttribute("id", "updateButton");
 
 
-		var downloadButton = document.createElement("a")
-		downloadButton.innerHTML = "Download STL";
-		this.parametersdiv.appendChild(downloadButton);
-		downloadButton.setAttribute("id", "download_link");
+		// var downloadButton = document.createElement("a")
+		// downloadButton.innerHTML = "Download STL";
+		// this.parametersdiv.appendChild(downloadButton);
+		// downloadButton.setAttribute("id", "download_link");
     // implementing instantUpdate
     // var instantUpdateCheckbox = document.createElement("input");
     // instantUpdateCheckbox.type = "checkbox";
@@ -1222,7 +1222,7 @@ OpenJsCad.Processor.prototype = {
       var value = null;
       if( (type == "text") || (type == "float") || (type == "int") )
       {
-        value = control.value;
+        value = $("#markerCount").val();
         if( (type == "float") || (type == "int") )
         {
           var isnumber = !isNaN(parseFloat(value)) && isFinite(value);
@@ -1624,5 +1624,6 @@ OpenJsCad.Processor.prototype = {
     this.paramControls = paramControls;
   },
 };
+
 
 

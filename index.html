@@ -359,11 +359,12 @@ if(me=='web-online') {
    $('#options').html(src);
 }
 </script>
-
 <div oncontextmenu="return false;" id="viewer"></div> <!-- avoiding popup when right mouse is clicked -->
 
-<div id="parametersdiv"></div>
-<div id="tail" >
+<div id="parametersdiv">
+</div>
+<div style="display:none;">
+	<div id="tail">
 <div id="statusdiv"></div>
 <div id="errordiv"></div>
 <div id="filedropzone">
@@ -382,6 +383,7 @@ if(me=='web-online') {
 	   <label for="autoreload">Auto Reload</label><input type="checkbox" name="autoreload" value="" id="autoreload" onclick="toggleAutoReload();">
     </div>
   </div>
+</div>
 </div>
 </div>
 <div id=footer style="display:none;">

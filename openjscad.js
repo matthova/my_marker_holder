@@ -1031,8 +1031,9 @@ OpenJsCad.Processor.prototype = {
     };
     this.statusbuttons.appendChild(this.generateOutputFileButton);
     this.downloadOutputFileLink = document.createElement("a");
-    this.downloadOutputFileLink.className = "downloadOutputFileLink"; // so we can css it
+    this.downloadOutputFileLink.id = "downloadOutputFileLink"; // so we can css it
     this.statusbuttons.appendChild(this.downloadOutputFileLink);
+		
 
     //this.parametersdiv = document.createElement("div");            // already created
     this.parametersdiv = document.getElementById("parametersdiv");   // get the info
@@ -1048,7 +1049,7 @@ OpenJsCad.Processor.prototype = {
     this.parameterstable = document.createElement("table");
     this.parameterstable.className = "parameterstable";
     this.parametersdiv.appendChild(this.parameterstable);
-
+		
     var parseParametersButton = document.createElement("button");
     parseParametersButton.innerHTML = "Update";
     parseParametersButton.onclick = function(e) {
@@ -1056,6 +1057,12 @@ OpenJsCad.Processor.prototype = {
     };
     this.parametersdiv.appendChild(parseParametersButton);
 		parseParametersButton.setAttribute("id", "updateButton");
+
+
+		var downloadButton = document.createElement("a")
+		downloadButton.innerHTML = "Download STL";
+		this.parametersdiv.appendChild(downloadButton);
+		downloadButton.setAttribute("id", "download_link");
     // implementing instantUpdate
     // var instantUpdateCheckbox = document.createElement("input");
     // instantUpdateCheckbox.type = "checkbox";
@@ -1465,6 +1472,7 @@ OpenJsCad.Processor.prototype = {
                     fileWriter.onwriteend = function(e) {
                       that.hasOutputFile = true;
                       that.downloadOutputFileLink.href = fileEntry.toURL();
+										  $('#download_link').attr('href',fileEntry.toURL());
                       that.downloadOutputFileLink.type = that.selectedFormatInfo().mimetype; 
                       that.downloadOutputFileLink.innerHTML = that.downloadLinkTextForCurrentObject();
                       that.downloadOutputFileLink.setAttribute("download", fileEntry.name);
